@@ -24,7 +24,7 @@ h3 {
 
 html {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -804,4 +804,72 @@ body {
     Arial,
     sans-serif;
   max-width: 340px;
+}
+
+@media (max-width: 768px) {
+  .content-inner {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .text-block {
+    text-align: center;
+  }
+
+  .image-block {
+    order: -1;
+  }
+
+  .image-block {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .specs-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .usecase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .usecase-item.usecase-large {
+    grid-column: span 1;
+    aspect-ratio: 4/3;
+  }
+
+  .page-section,
+  .section-specs,
+  .section-usecases {
+    padding: 5rem 1.5rem;
+  }
+
+  .nav-list {
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .nav-list a {
+    font-size: 10px;
+    padding: 0 1rem;
+  }
+
+  .nav-list a.center-item {
+    transform: scale(1.5);
+  }
+
+  .section-cta .btn {
+    margin-bottom: 1rem;
+  }
+
+  .section-cta div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

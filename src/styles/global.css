@@ -37,14 +37,14 @@ body {
   width: 100%;
   height: 130vh;
   background: linear-gradient(
-    172deg,
+    175deg,
     #a9d8f2 0%,
     #bfe4f8 14%,
     #d4eef9 30%,
     #e8f5fb 48%,
-    #f2f5f0 64%,
-    #e4d4ad96 80%,
-    #be620c25 100%
+    #ffffffde 64%,
+    #ff9000 80%,
+    #f5963c 100%
   );
   display: flex;
   align-items: center;
@@ -52,12 +52,16 @@ body {
   position: relative;
   overflow-x: clip;
   z-index: 1;
+  margin-bottom: -180px;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
 }
 
 /* ── Ambient background clouds ─────────────────────── */
 .bg-cloud {
   position: absolute;
   opacity: 0.9;
+  z-index: 9999;
 }
 
 .bg-cloud-1 {
@@ -261,7 +265,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   width: 40%;
-  z-index: 20;
+  z-index: 9999;
   pointer-events: none;
   overflow-x: hidden;
 }
@@ -290,7 +294,7 @@ body {
 .top-cloud {
   position: absolute;
   pointer-events: none;
-  z-index: 2;
+  z-index: 9999;
 }
 
 .top-cloud-1 {
@@ -433,6 +437,14 @@ body {
 .slide-content {
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.slide-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
 }
 
 .content-inner {
@@ -443,6 +455,8 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .text-block h2 {

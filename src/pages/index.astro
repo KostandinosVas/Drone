@@ -60,6 +60,25 @@ import "../styles/global.css";
     },
   );
 
+  /* ── Scycrapers video: blur clears as section is revealed ─ */
+  const scycrapersVideo = document.querySelector(
+    ".scycrapers-video",
+  ) as HTMLElement;
+  gsap.fromTo(
+    scycrapersVideo,
+    { filter: "blur(24px)" },
+    {
+      filter: "blur(0px)",
+      ease: "none",
+      scrollTrigger: {
+        trigger: scycrapers,
+        start: "top bottom",
+        end: "top 50%",
+        scrub: 1.2,
+      },
+    },
+  );
+
   /* ── Cloud ambient float ─────────────────────────────
      Ambient clouds (bg-cloud-1, bg-cloud-2): free XY drift.
      Transition clouds (bg-cloud-3/4/5, top-cloud-1/2/3): Y only —
